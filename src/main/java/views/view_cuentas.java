@@ -4,6 +4,11 @@
  */
 package views;
 
+import Main.frm_principal;
+import forms.frm_cuenta;
+import java.awt.Frame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luis
@@ -86,6 +91,11 @@ public class view_cuentas extends javax.swing.JInternalFrame {
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton2);
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828806.png"))); // NOI18N
@@ -142,6 +152,13 @@ public class view_cuentas extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Frame f = JOptionPane.getFrameForComponent(frm_principal.jDesktopPane1);
+        frm_cuenta formulario = new frm_cuenta(f, true);
+        formulario.setLocationRelativeTo(f);
+        formulario.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

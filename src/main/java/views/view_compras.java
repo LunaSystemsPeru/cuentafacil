@@ -5,7 +5,7 @@
 package views;
 
 import Main.frm_principal;
-import forms.frm_venta;
+import forms.frm_compra;
 import java.awt.Frame;
 import javax.swing.JOptionPane;
 
@@ -13,12 +13,12 @@ import javax.swing.JOptionPane;
  *
  * @author Luis
  */
-public class view_ventas extends javax.swing.JInternalFrame {
+public class view_compras extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form view_ventas
      */
-    public view_ventas() {
+    public view_compras() {
         initComponents();
     }
 
@@ -57,9 +57,8 @@ public class view_ventas extends javax.swing.JInternalFrame {
         jToolBar2 = new javax.swing.JToolBar();
         jButton6 = new javax.swing.JButton();
 
-        setTitle("Registro de Ventas");
-        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828625.png"))); // NOI18N
-        setPreferredSize(null);
+        setTitle("Registro de Compras");
+        setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828630.png"))); // NOI18N
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Opciones de busqueda"));
 
@@ -271,7 +270,7 @@ public class view_ventas extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         Frame f = JOptionPane.getFrameForComponent(frm_principal.jDesktopPane1);
-        frm_venta formulario = new frm_venta(f, true);
+        frm_compra formulario = new frm_compra(f, true);
         formulario.setLocationRelativeTo(f);
         formulario.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
