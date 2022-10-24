@@ -15,16 +15,22 @@ import java.sql.Statement;
  */
 public class ControllerConectar {
 
-    Connection Conection = Conectar.getConnection();
+    Connection databaseConnection;
 
     public ControllerConectar() {
+        try {
+            this.databaseConnection = DBUtil.getConn();
+        } catch (SQLException ex) {
+            System.out.println(ex.getLocalizedMessage());
+        }
+
     }
 
     public Statement getStatement() {
         Statement st = null;
-
         try {
-            st = Conection.createStatement();
+            databaseConnection = DBUtil.getConn();
+            st = databaseConnection.createStatement();
         } catch (SQLException e) {
             System.out.println("Error: Conexión incorrecta.");
             e.printStackTrace();

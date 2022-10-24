@@ -4,9 +4,12 @@
  */
 package views;
 
+import Class.CuentaContable;
+import Class.Usuario;
 import Main.frm_principal;
 import forms.frm_cuenta;
 import java.awt.Frame;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,11 +18,16 @@ import javax.swing.JOptionPane;
  */
 public class view_cuentas extends javax.swing.JInternalFrame {
 
+    CuentaContable Cuenta = new CuentaContable();
+    String SQL;
+
     /**
      * Creates new form view_cuentas
      */
     public view_cuentas() {
         initComponents();
+        SQL = "select * from cuentas_pcge limit 10";
+        Cuenta.verCuentas(jTable1, SQL);
     }
 
     /**
@@ -44,7 +52,15 @@ public class view_cuentas extends javax.swing.JInternalFrame {
 
         setTitle("Cuentas del Plan Contable");
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         jLabel1.setText("Buscar:");
+
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -101,6 +117,11 @@ public class view_cuentas extends javax.swing.JInternalFrame {
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton4);
         jToolBar1.add(jSeparator2);
 
@@ -143,6 +164,18 @@ public class view_cuentas extends javax.swing.JInternalFrame {
         formulario.setLocationRelativeTo(f);
         formulario.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            String texto = jTextField1.getText().trim();
+            SQL = "select * from cuentas_pcge where codcuenta like '" + texto + "%' limit 50";
+            Cuenta.verCuentas(jTable1, SQL);
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
