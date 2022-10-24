@@ -12,13 +12,15 @@ import java.sql.SQLException;
  * @author Luis
  */
 public class Usuario {
-     ControllerConectar Conectar = new ControllerConectar();
-    
+
+    ControllerConectar Conectar;
+
     private int id;
 
     public Usuario() {
+        Conectar = new ControllerConectar();
     }
-    
+
     public void ver_ventas() {
         try {
             ResultSet rs = Conectar.consulta("select * from usuarios limit 1");
@@ -28,5 +30,7 @@ public class Usuario {
         } catch (SQLException e) {
             System.out.println(e.getLocalizedMessage());
         }
+        DBUtil.closeConn();
+
     }
 }
