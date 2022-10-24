@@ -92,6 +92,7 @@ public class frm_venta extends javax.swing.JDialog {
         }
         jFormattedTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        jTextField3.setEditable(false);
         jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTextField3.setText("2022-09");
 

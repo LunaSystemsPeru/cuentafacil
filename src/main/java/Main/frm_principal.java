@@ -6,6 +6,7 @@ package Main;
 
 import forms.frm_ventas_cuentas_frecuentes;
 import views.view_anexos;
+import views.view_asientos;
 import views.view_compras;
 import views.view_cuentas;
 import views.view_ventas;
@@ -352,6 +353,11 @@ public class frm_principal extends javax.swing.JFrame {
         jMenu2.add(jMenu4);
 
         jMenuItem14.setText("Diario");
+        jMenuItem14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem14ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem14);
 
         jMenuBar1.add(jMenu2);
@@ -416,30 +422,35 @@ public class frm_principal extends javax.swing.JFrame {
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         view_anexos formulario = new view_anexos();
         jDesktopPane1.add(formulario);
+        formulario.setClosable(true);
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         view_ventas formulario = new view_ventas();
         jDesktopPane1.add(formulario);
+        formulario.setClosable(true);
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         frm_ventas_cuentas_frecuentes formulario = new frm_ventas_cuentas_frecuentes();
         jDesktopPane1.add(formulario);
+        formulario.setClosable(true);
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         view_cuentas formulario = new view_cuentas();
         jDesktopPane1.add(formulario);
+        formulario.setClosable(true);
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         view_compras formulario = new view_compras();
         jDesktopPane1.add(formulario);
+        formulario.setClosable(true);
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
@@ -453,6 +464,14 @@ public class frm_principal extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         jDialog1.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        jDesktopPane1.removeAll();
+        view_asientos formulario = new view_asientos();
+        jDesktopPane1.add(formulario);
+        formulario.setClosable(true);
+        formulario.setVisible(true);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     /**
      * @param args the command line arguments
