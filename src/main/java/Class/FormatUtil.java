@@ -33,6 +33,9 @@ public class FormatUtil {
     DecimalFormatSymbols simbolo = new DecimalFormatSymbols();
     DecimalFormat formato = null;
 
+    public FormatUtil() {
+    }
+    
     public void celdaCentro_JTable(JTable table, int col) {
         DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
 

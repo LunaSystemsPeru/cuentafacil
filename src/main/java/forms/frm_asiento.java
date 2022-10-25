@@ -3,19 +3,36 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package forms;
-
+import Class.FormatUtil;
+import Class.ObjetoComboBox;
 /**
  *
  * @author Luis
  */
 public class frm_asiento extends javax.swing.JDialog {
 
+    FormatUtil Util;
+    ObjetoComboBox Objeto;
     /**
      * Creates new form frm_asiento
      */
     public frm_asiento(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        Util = new FormatUtil();
         initComponents();
+        
+        //cargar valores iniciales
+        Load();
+    }
+    
+    private void Load () {
+        //cargar valores iniciales
+        txt_fecha1.setValue(Util.formatearFecha_DDMMYYYY(Util.obtenerFechaActual()));
+        Objeto = new ObjetoComboBox();
+        Objeto.llenarComboParametros(cbx_tipo, 5);
+        Objeto.llenarComboParametros(cbx_libro, 4);
+        Objeto.llenarComboParametros(cbx_moneda, 3);
+        Objeto.llenarComboParametros(cbx_tipo_doc, 2);
     }
 
     /**
@@ -92,9 +109,7 @@ public class frm_asiento extends javax.swing.JDialog {
         jButton2.setText("Añadir");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setMaximumSize(null);
         jButton2.setMinimumSize(new java.awt.Dimension(50, 41));
-        jButton2.setPreferredSize(null);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar2.add(jButton2);
 
@@ -102,9 +117,7 @@ public class frm_asiento extends javax.swing.JDialog {
         jButton4.setText("Modificar");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setMaximumSize(null);
         jButton4.setMinimumSize(new java.awt.Dimension(50, 41));
-        jButton4.setPreferredSize(null);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar2.add(jButton4);
 
@@ -112,9 +125,7 @@ public class frm_asiento extends javax.swing.JDialog {
         jButton5.setText("Eliminar");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setMaximumSize(null);
         jButton5.setMinimumSize(new java.awt.Dimension(50, 41));
-        jButton5.setPreferredSize(null);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar2.add(jButton5);
 
@@ -312,7 +323,6 @@ public class frm_asiento extends javax.swing.JDialog {
         jLabel1.setText("Libro:");
 
         cbx_libro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "APERTURA", "CIERRE", "VENTAS", "COMPRAS", "CAJAS Y BANCOS" }));
-        cbx_libro.setEnabled(false);
         cbx_libro.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 cbx_libroKeyPressed(evt);
@@ -334,7 +344,6 @@ public class frm_asiento extends javax.swing.JDialog {
         jLabel6.setText("Moneda:");
 
         cbx_moneda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SOLES", "DOLAR AMERICANO" }));
-        cbx_moneda.setEnabled(false);
         cbx_moneda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 cbx_monedaKeyPressed(evt);
@@ -350,7 +359,6 @@ public class frm_asiento extends javax.swing.JDialog {
         jLabel3.setText("Tipo:");
 
         cbx_tipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A - APERTURA", "M - MOVIMIENTO", "C - CIERRE" }));
-        cbx_tipo.setEnabled(false);
         cbx_tipo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 cbx_tipoKeyPressed(evt);
@@ -367,7 +375,6 @@ public class frm_asiento extends javax.swing.JDialog {
             ex.printStackTrace();
         }
         txt_fecha1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_fecha1.setText("02/03/2019");
         txt_fecha1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txt_fecha1KeyPressed(evt);
