@@ -5,6 +5,9 @@
 package Main;
 
 import forms.frm_ventas_cuentas_frecuentes;
+import java.awt.Frame;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import views.view_anexos;
 import views.view_asientos;
 import views.view_compras;
@@ -22,6 +25,22 @@ public class frm_principal extends javax.swing.JFrame {
      */
     public frm_principal() {
         initComponents();
+         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        abrirLogin();
+    }
+
+    private void abrirLogin() {
+        jDialog2.setModal(true);
+        jDialog2.setSize(298, 351);
+        jDialog2.setLocationRelativeTo(null);
+        jDialog2.setVisible(true);
+    }
+
+    private void seleccionarEmpresa() {
+        jDialog1.setModal(true);
+        jDialog1.setSize(493, 582);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setVisible(true);
     }
 
     /**
@@ -49,6 +68,14 @@ public class frm_principal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
+        jDialog2 = new javax.swing.JDialog();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        txt_email_login = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txt_contra_login = new javax.swing.JPasswordField();
+        btn_logear = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -163,8 +190,6 @@ public class frm_principal extends javax.swing.JFrame {
 
         jLabel8.setText("Periodo a Trabajar:");
 
-        jToolBar1.setFloatable(false);
-
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828643.png"))); // NOI18N
         jButton3.setText("Guardar");
         jButton3.setFocusable(false);
@@ -216,6 +241,86 @@ public class frm_principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
+        );
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828643.png"))); // NOI18N
+
+        jLabel10.setText("Ingrese Usuario:");
+
+        txt_email_login.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_email_loginKeyPressed(evt);
+            }
+        });
+
+        jLabel11.setText("Ingrese Contraseña:");
+
+        txt_contra_login.setEnabled(false);
+        txt_contra_login.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txt_contra_loginKeyPressed(evt);
+            }
+        });
+
+        btn_logear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828651.png"))); // NOI18N
+        btn_logear.setText("Ingresar");
+        btn_logear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_logearActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828666.png"))); // NOI18N
+        jLabel15.setText("Salir");
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog2Layout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addGap(259, 259, 259))
+                    .addComponent(txt_contra_login)
+                    .addComponent(txt_email_login)
+                    .addGroup(jDialog2Layout.createSequentialGroup()
+                        .addGroup(jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel10))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jDialog2Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(btn_logear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(46, 46, 46))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialog2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_email_login, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_contra_login, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74)
+                .addComponent(btn_logear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -473,6 +578,23 @@ public class frm_principal extends javax.swing.JFrame {
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
+    private void txt_email_loginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_email_loginKeyPressed
+
+    }//GEN-LAST:event_txt_email_loginKeyPressed
+
+    private void txt_contra_loginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contra_loginKeyPressed
+
+    }//GEN-LAST:event_txt_contra_loginKeyPressed
+
+    private void btn_logearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logearActionPerformed
+        jDialog2.setVisible(false);
+        seleccionarEmpresa();
+    }//GEN-LAST:event_btn_logearActionPerformed
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_jLabel15MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -509,12 +631,17 @@ public class frm_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_logear;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     public static javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -522,6 +649,7 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -557,5 +685,7 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JPasswordField txt_contra_login;
+    private javax.swing.JTextField txt_email_login;
     // End of variables declaration//GEN-END:variables
 }

@@ -363,9 +363,15 @@ public class view_asientos extends javax.swing.JInternalFrame {
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton2);
         jToolBar1.add(jSeparator1);
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828819.png"))); // NOI18N
         jButton3.setText("Nuevo Asiento");
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -377,12 +383,14 @@ public class view_asientos extends javax.swing.JInternalFrame {
         });
         jToolBar1.add(jButton3);
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828806.png"))); // NOI18N
         jButton4.setText("Editar Asiento");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton4);
 
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828890.png"))); // NOI18N
         jButton5.setText("Eliminar Asiento");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -421,6 +429,13 @@ public class view_asientos extends javax.swing.JInternalFrame {
         formulario.setLocationRelativeTo(f);
         formulario.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jDialog1.setModal(true);
+        jDialog1.setSize(789, 647);
+        jDialog1.setLocationRelativeTo(null);
+        jDialog1.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -15,7 +15,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CuentaContable {
 
-    FormatUtil Util = new FormatUtil();
+    FormatUtil Util;
 
     private int id;
     private int codigo_cuenta;
@@ -28,6 +28,7 @@ public class CuentaContable {
 
     public CuentaContable() {
         Conectar = new ControllerConectar();
+        Util = new FormatUtil();
     }
 
     public int getId() {

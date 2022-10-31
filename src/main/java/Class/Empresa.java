@@ -9,6 +9,7 @@ package Class;
  * @author Luis
  */
 public class Empresa {
+
     private int id;
     private String ruc;
     private String razon;
@@ -66,6 +67,5 @@ public class Empresa {
     public void setEstado(int estado) {
         this.estado = estado;
     }
-    
-    
+
 }
