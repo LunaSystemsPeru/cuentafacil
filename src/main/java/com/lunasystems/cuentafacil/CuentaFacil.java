@@ -4,8 +4,8 @@
  */
 package com.lunasystems.cuentafacil;
 
-import Class.Usuario;
 import Main.frm_principal;
+import javax.swing.JFrame;
 
 /**
  *
@@ -13,14 +13,13 @@ import Main.frm_principal;
  */
 public class CuentaFacil {
     
-    static Usuario usuario = new Usuario();
-
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         frm_principal formulario = new frm_principal();
         formulario.setLocationRelativeTo(null);
+        formulario.setExtendedState(JFrame.MAXIMIZED_BOTH);
         formulario.setVisible(true);
     }
    
