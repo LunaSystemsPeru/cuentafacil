@@ -36,7 +36,7 @@ public class frm_principal extends javax.swing.JFrame {
 
     private void seleccionarEmpresa() {
         jd_seleccion_empresas.setModal(true);
-        jd_seleccion_empresas.setSize(493, 582);
+        jd_seleccion_empresas.setSize(509, 589);
         jd_seleccion_empresas.setLocationRelativeTo(null);
         jd_seleccion_empresas.setVisible(true);
     }
@@ -581,7 +581,8 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jd_seleccion_empresas.dispose();
+        jd_seleccion_empresas.setVisible(false);
+        this.requestFocus();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
