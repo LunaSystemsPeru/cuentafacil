@@ -29,16 +29,16 @@ public class frm_principal extends javax.swing.JFrame {
 
     private void abrirLogin() {
         jd_login.setModal(true);
-        jd_login.setSize(287, 350);
+        jd_login.setSize(322, 356);
         jd_login.setLocationRelativeTo(null);
         jd_login.setVisible(true);
     }
 
     private void seleccionarEmpresa() {
-        jd_seleccion_empresas.setModal(true);
-        jd_seleccion_empresas.setSize(509, 589);
-        jd_seleccion_empresas.setLocationRelativeTo(null);
-        jd_seleccion_empresas.setVisible(true);
+        jd_empresa.setModal(true);
+        jd_empresa.setSize(493, 582);
+        jd_empresa.setLocationRelativeTo(null);
+        jd_empresa.setVisible(true);
     }
 
     /**
@@ -50,7 +50,7 @@ public class frm_principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jd_seleccion_empresas = new javax.swing.JDialog();
+        jd_empresa = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jSpinner2 = new javax.swing.JSpinner();
@@ -109,7 +109,7 @@ public class frm_principal extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jMenuItem13 = new javax.swing.JMenuItem();
 
-        jd_seleccion_empresas.setTitle("Cambiar Periodo y Empresa");
+        jd_empresa.setTitle("Cambiar Periodo y Empresa");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -210,41 +210,40 @@ public class frm_principal extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton3);
 
-        javax.swing.GroupLayout jd_seleccion_empresasLayout = new javax.swing.GroupLayout(jd_seleccion_empresas.getContentPane());
-        jd_seleccion_empresas.getContentPane().setLayout(jd_seleccion_empresasLayout);
-        jd_seleccion_empresasLayout.setHorizontalGroup(
-            jd_seleccion_empresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_seleccion_empresasLayout.createSequentialGroup()
+        javax.swing.GroupLayout jd_empresaLayout = new javax.swing.GroupLayout(jd_empresa.getContentPane());
+        jd_empresa.getContentPane().setLayout(jd_empresaLayout);
+        jd_empresaLayout.setHorizontalGroup(
+            jd_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_empresaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jd_seleccion_empresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jd_seleccion_empresasLayout.createSequentialGroup()
-                        .addGroup(jd_seleccion_empresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_empresaLayout.createSequentialGroup()
+                        .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jd_seleccion_empresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3)
-                            .addGroup(jd_seleccion_empresasLayout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jd_empresaLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField3)))
                 .addContainerGap())
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jd_seleccion_empresasLayout.setVerticalGroup(
-            jd_seleccion_empresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_seleccion_empresasLayout.createSequentialGroup()
+        jd_empresaLayout.setVerticalGroup(
+            jd_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_empresaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jd_seleccion_empresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jd_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jd_seleccion_empresasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jd_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -252,12 +251,7 @@ public class frm_principal extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        jd_login.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        jd_login.addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosed(java.awt.event.WindowEvent evt) {
-                jd_loginWindowClosed(evt);
-            }
-        });
+        jd_login.setResizable(false);
 
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828643.png"))); // NOI18N
@@ -295,24 +289,29 @@ public class frm_principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        jLabel12.setText("<html><p>*Accede con tu usuario y clave del asistente web cuenta facil</p></html>");
-
         javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
         jd_login.getContentPane().setLayout(jd_loginLayout);
         jd_loginLayout.setHorizontalGroup(
             jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_loginLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_logear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txt_contra_login)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel10)
-                    .addComponent(txt_email_login)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))
+                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_loginLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel15)
+                        .addGap(259, 259, 259))
+                    .addGroup(jd_loginLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(btn_logear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(46, 46, 46))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jd_loginLayout.createSequentialGroup()
+                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txt_contra_login, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_email_login, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jd_loginLayout.setVerticalGroup(
@@ -574,15 +573,14 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jd_seleccion_empresas.setSize(559, 569);
-        jd_seleccion_empresas.setModal(true);
-        jd_seleccion_empresas.setLocationRelativeTo(null);
-        jd_seleccion_empresas.setVisible(true);
+        jd_empresa.setSize(559, 569);
+        jd_empresa.setModal(true);
+        jd_empresa.setLocationRelativeTo(null);
+        jd_empresa.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jd_seleccion_empresas.setVisible(false);
-        this.requestFocus();
+        jd_empresa.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
@@ -704,8 +702,8 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JDialog jd_empresa;
     private javax.swing.JDialog jd_login;
-    private javax.swing.JDialog jd_seleccion_empresas;
     private javax.swing.JPasswordField txt_contra_login;
     private javax.swing.JTextField txt_email_login;
     // End of variables declaration//GEN-END:variables
