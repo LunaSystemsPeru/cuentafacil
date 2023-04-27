@@ -68,4 +68,10 @@ public class Empresa {
         this.estado = estado;
     }
 
+    public void verEmpresas() {
+        String query = "select * "
+                + "from empresas "
+                + "where usuario_id = '" + this.usuario_id + "'";
+    }
+
 }
