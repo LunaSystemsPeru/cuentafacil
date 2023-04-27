@@ -4,6 +4,7 @@
  */
 package Main;
 
+import Class.Empresa;
 import forms.frm_ventas_cuentas_frecuentes;
 import javax.swing.JFrame;
 import views.view_anexos;
@@ -18,25 +19,21 @@ import views.view_ventas;
  */
 public class frm_principal extends javax.swing.JFrame {
 
+    public static Empresa empresa = new Empresa();
+
     /**
      * Creates new form frm_principal
      */
     public frm_principal() {
         initComponents();
-         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        abrirLogin();
-    }
-
-    private void abrirLogin() {
-        jd_login.setModal(true);
-        jd_login.setSize(322, 356);
-        jd_login.setLocationRelativeTo(null);
-        jd_login.setVisible(true);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        empresa.setUsuario_id(1);
+        empresa.verEmpresas(jTable1);
     }
 
     private void seleccionarEmpresa() {
         jd_empresa.setModal(true);
-        jd_empresa.setSize(493, 582);
+        jd_empresa.setSize(593, 582);
         jd_empresa.setLocationRelativeTo(null);
         jd_empresa.setVisible(true);
     }
@@ -67,15 +64,6 @@ public class frm_principal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jd_login = new javax.swing.JDialog();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txt_email_login = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        txt_contra_login = new javax.swing.JPasswordField();
-        btn_logear = new javax.swing.JButton();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -220,14 +208,15 @@ public class frm_principal extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jd_empresaLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addGroup(jd_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jd_empresaLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3)))
+                        .addGroup(jd_empresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField3)
+                            .addGroup(jd_empresaLayout.createSequentialGroup()
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
             .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -249,91 +238,6 @@ public class frm_principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
-        );
-
-        jd_login.setResizable(false);
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828643.png"))); // NOI18N
-
-        jLabel10.setText("Ingrese Usuario:");
-
-        txt_email_login.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt_email_loginKeyPressed(evt);
-            }
-        });
-
-        jLabel11.setText("Ingrese Contraseña:");
-
-        txt_contra_login.setEnabled(false);
-        txt_contra_login.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txt_contra_loginKeyPressed(evt);
-            }
-        });
-
-        btn_logear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828651.png"))); // NOI18N
-        btn_logear.setText("Ingresar");
-        btn_logear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_logearActionPerformed(evt);
-            }
-        });
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/1828666.png"))); // NOI18N
-        jLabel15.setText("Salir");
-        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel15MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
-        jd_login.getContentPane().setLayout(jd_loginLayout);
-        jd_loginLayout.setHorizontalGroup(
-            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_loginLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_loginLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel15)
-                        .addGap(259, 259, 259))
-                    .addGroup(jd_loginLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(btn_logear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(46, 46, 46))
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jd_loginLayout.createSequentialGroup()
-                        .addGroup(jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txt_contra_login, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txt_email_login, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jd_loginLayout.setVerticalGroup(
-            jd_loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_loginLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_email_login, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_contra_login, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(btn_logear, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
-                .addGap(23, 23, 23))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -373,6 +277,11 @@ public class frm_principal extends javax.swing.JFrame {
 
         jButton2.setText("C");
         jButton2.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -573,13 +482,11 @@ public class frm_principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jd_empresa.setSize(559, 569);
-        jd_empresa.setModal(true);
-        jd_empresa.setLocationRelativeTo(null);
-        jd_empresa.setVisible(true);
+        seleccionarEmpresa();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        empresa.setId(Integer.parseInt(jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString()));
         jd_empresa.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -591,26 +498,13 @@ public class frm_principal extends javax.swing.JFrame {
         formulario.setVisible(true);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
-    private void txt_email_loginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_email_loginKeyPressed
-
-    }//GEN-LAST:event_txt_email_loginKeyPressed
-
-    private void txt_contra_loginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contra_loginKeyPressed
-
-    }//GEN-LAST:event_txt_contra_loginKeyPressed
-
-    private void btn_logearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logearActionPerformed
-        jd_login.setVisible(false);
-        seleccionarEmpresa();
-    }//GEN-LAST:event_btn_logearActionPerformed
-
-    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jLabel15MouseClicked
-
     private void jd_loginWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jd_loginWindowClosed
         System.exit(0);
     }//GEN-LAST:event_jd_loginWindowClosed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        seleccionarEmpresa();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -648,17 +542,12 @@ public class frm_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_logear;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     public static javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -666,7 +555,6 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -703,8 +591,5 @@ public class frm_principal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JDialog jd_empresa;
-    private javax.swing.JDialog jd_login;
-    private javax.swing.JPasswordField txt_contra_login;
-    private javax.swing.JTextField txt_email_login;
     // End of variables declaration//GEN-END:variables
 }

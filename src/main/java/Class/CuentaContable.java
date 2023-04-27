@@ -24,6 +24,7 @@ public class CuentaContable {
     private int cuenta_cargo;
     private int cuenta_abono;
     private int empresa_id;
+    
     private final ControllerConectar Conectar;
 
     public CuentaContable() {

@@ -4,6 +4,11 @@
  */
 package Class;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Luis
@@ -15,9 +20,12 @@ public class Empresa {
     private String razon;
     private String direccion;
     private int usuario_id;
-    private int estado;
+    private int estado; 
+    
+    private final ControllerConectar Conectar;
 
     public Empresa() {
+        Conectar = new ControllerConectar();
     }
 
     public int getId() {
@@ -68,10 +76,50 @@ public class Empresa {
         this.estado = estado;
     }
 
-    public void verEmpresas() {
-        String query = "select * "
+    public void verEmpresas(JTable tabla) {
+        String SQL = "select id, ruc, razon "
                 + "from empresas "
-                + "where usuario_id = '" + this.usuario_id + "'";
+                + "where usuarioid = '" + this.usuario_id + "' and estado = 1 "
+                + "order by razon asc";
+        
+        DefaultTableModel modelo;
+        modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int fila, int columna) {
+                return false;
+            }
+        };
+
+        modelo.addColumn("Item");
+        modelo.addColumn("RUC");
+        modelo.addColumn("Razon Social");
+        modelo.addColumn("");
+
+        try {
+            Object fila[] = new Object[4];
+            int nrofila = 1;
+            ResultSet rs = this.Conectar.consulta(SQL);
+            while (rs.next()) {
+                fila[0] = nrofila;
+                fila[1] = rs.getString("ruc");
+                fila[2] = rs.getString("razon");
+                fila[3] = rs.getString("id");
+                modelo.addRow(fila);
+                nrofila++;
+            }
+
+            tabla.setModel(modelo);
+
+            tabla.getColumnModel().getColumn(0).setPreferredWidth(35);
+            tabla.getColumnModel().getColumn(1).setPreferredWidth(100);
+            tabla.getColumnModel().getColumn(2).setPreferredWidth(400);
+            tabla.getColumnModel().getColumn(3).setPreferredWidth(0);
+        } catch (SQLException e) {
+            System.out.println(e.getLocalizedMessage());
+        } finally {
+            DBUtil.closeConn();
+        }
+
     }
 
 }

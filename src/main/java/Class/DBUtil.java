@@ -41,6 +41,7 @@ public class DBUtil {
         if (conn == null || conn.isClosed()) {
             conn = ds.getConnection();
         }
+        System.out.println("conexion actual " + conn);
         return conn;
     }
 
